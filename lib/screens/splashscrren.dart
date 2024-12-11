@@ -5,6 +5,17 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SizedBox(
+          child: Image.asset(
+            'assets/images/joefloxy.jpeg',
+            width: 300,
+            height: 300,
+          ),
+        ),
+      ),
+    );
   }
 }
