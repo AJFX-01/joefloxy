@@ -11,8 +11,8 @@ class SplashScreen extends StatelessWidget {
         child: SizedBox(
           child: Image.asset(
             'assets/images/joefloxy.jpeg',
-            width: 300,
-            height: 300,
+            width: 200,
+            height: 200,
           ),
         ),
       ),

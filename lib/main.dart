@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joefloxy/screens/onboarding.dart';
 import 'package:joefloxy/screens/splashscrren.dart';
 
 void main() {
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       restorationScopeId: 'app',
       title: "joe",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
       initialRoute: '/',
-      routes: {'/': (context) => const SplashScreen()},
+      routes: {'/': (context) => const Onboarding()},
     );
   }
 }
