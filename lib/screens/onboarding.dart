@@ -127,7 +127,7 @@ class _OnboardingState extends State<Onboarding> {
                       Text(
                         steps[currentStep]["title"],
                         style: TextStyle(
-                            fontSize: 22,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: AppColor.secondaryColorLight),
                       ),
@@ -135,6 +135,7 @@ class _OnboardingState extends State<Onboarding> {
                         steps[currentStep]["description"],
                         style: const TextStyle(
                           fontSize: 10,
+                          fontWeight: FontWeight.w600,
                         ),
                         textAlign: TextAlign.center,
                       ),
