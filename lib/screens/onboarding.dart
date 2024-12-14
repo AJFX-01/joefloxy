@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:joefloxy/utils/constant_utils.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 
-class Onboarding extends StatefulWidget {
-  const Onboarding({super.key});
+class OnboardingPage extends StatefulWidget {
+  const OnboardingPage({super.key});
 
   @override
-  State<Onboarding> createState() => _OnboardingState();
+  State<OnboardingPage> createState() => _OnboardingPageState();
 }
 
-class _OnboardingState extends State<Onboarding> {
+class _OnboardingPageState extends State<OnboardingPage> {
 
   int currentStep = 0;
   final List<Map<String, dynamic>> steps = onboarding;
@@ -20,7 +20,7 @@ class _OnboardingState extends State<Onboarding> {
         currentStep++;
       });
     } else {
-      // navigate to next screen
+      
     }
   }
 
