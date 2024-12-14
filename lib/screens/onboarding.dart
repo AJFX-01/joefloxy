@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/utils/constant_utils.dart';
+import 'package:joefloxy/utils/routes.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -10,7 +11,6 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-
   int currentStep = 0;
   final List<Map<String, dynamic>> steps = onboarding;
 
@@ -20,7 +20,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         currentStep++;
       });
     } else {
-      
+        Routes.navigate(context, routeName: Routes.loginPage);
     }
   }
 
@@ -97,7 +97,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         "Skip",
                                         style: TextStyle(
                                           fontSize: 10,
-                                          color: AppColor.secondaryColor,
+                                          color: AppColor.blackColor,
                                         ),
                                       ),
                                       const SizedBox(
@@ -105,7 +105,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                       ),
                                       Icon(
                                         Icons.arrow_forward,
-                                        color: AppColor.secondaryColor,
+                                        color: AppColor.blackColor,
                                         size: 13,
                                       )
                                     ],
@@ -152,14 +152,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: List.generate(steps.length, (i) => 
-                    indicator(
-                      i == currentStep ?
-                      AppColor.secondaryColorLight :
-                      AppColor.secondaryColorLighter,
-                      i == currentStep ? 35 : 15,
-                    )
-                  ),
+                  children: List.generate(
+                      steps.length,
+                      (i) => indicator(
+                            i == currentStep
+                                ? AppColor.secondaryColorLight
+                                : AppColor.secondaryColorLighter,
+                            i == currentStep ? 35 : 15,
+                          )),
                 ),
                 SizedBox(
                   height: 30,

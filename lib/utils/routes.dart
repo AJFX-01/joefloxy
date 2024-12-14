@@ -3,7 +3,7 @@ import 'package:joefloxy/screens/auth/login.dart';
 import 'package:joefloxy/screens/onboarding.dart';
 
 class Routes {
-  static const onboardPage = '/onboard';
+  static const onboardPage = '/';
   static const loginPage = '/login';
   static const signupPage = '/signup';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joefloxy/screens/onboarding.dart';
-import 'package:joefloxy/screens/splashscrren.dart';
+import 'package:joefloxy/utils/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-      initialRoute: '/',
-      routes: {'/': (context) => const Onboarding()},
+      initialRoute: Routes.onboardPage,
+      routes: Routes.pages,
     );
   }
 }
