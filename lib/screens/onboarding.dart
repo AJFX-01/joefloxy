@@ -20,7 +20,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         currentStep++;
       });
     } else {
-        Routes.navigate(context, routeName: Routes.loginPage);
+        Routes.navigate(context, routeName: Routes.signupPage);
     }
   }
 
