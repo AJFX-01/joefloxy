@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:joefloxy/utils/constant_utils.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 
+import '../../utils/routes.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -12,11 +14,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool obscurePassword = false;
   bool _rememberMe = false;
+  void prevPage() => Navigator.pop(context);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBar("Log In"),
+        appBar: appBar("Log In", prevPage),
         backgroundColor: AppColor.whiteColor,
         body: SingleChildScrollView(
           child: Padding(
@@ -62,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 AppButton(
                   text: "Log In",
                   buttonHeight: 40,
-                  onPressed: () => {}, 
+                  onPressed: () => {},
                   textColor: AppColor.secondaryColor,
                   buttonColor: AppColor.secondaryColorLighter,
                   borderRadius: BorderRadius.circular(60),
@@ -150,26 +153,26 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Checkbox(
-              checkColor: AppColor.whiteColor,
-              value: _rememberMe,
-              activeColor: AppColor.secondaryColorLighter,
-              onChanged: (bool? value) {
-                setState(() {
-                  _rememberMe = value!;
-                });
-              },
+            Transform.scale(
+              scale: 1,
+              child: Checkbox(
+                checkColor: AppColor.whiteColor,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                value: _rememberMe,
+                activeColor: AppColor.secondaryColorLighter,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _rememberMe = value!;
+                  });
+                },
+              ),
             ),
             Text('Remember me',
-                style: TextStyle(
-                  fontSize: 9,
-                  color: AppColor.blackColor
-                )
-              ),
+                style: TextStyle(fontSize: 9, color: AppColor.blackColor)),
           ],
         ),
-        
         TextButton(
           onPressed: () => {},
           child: Text(
@@ -191,17 +194,13 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         Text(
           "Don't have an account?",
-          style: TextStyle(
-            fontSize: 11,
-            color: AppColor.blackColor
-          ),
+          style: TextStyle(fontSize: 11, color: AppColor.blackColor),
         ),
         TextButton(
-          onPressed: () => {},
+          onPressed: () =>
+              {Routes.navigate(context, routeName: Routes.signupPage)},
           style: TextButton.styleFrom(
-            padding: EdgeInsets.zero,
-            minimumSize: Size.zero
-          ),
+              padding: EdgeInsets.zero, minimumSize: Size.zero),
           child: Text(
             style: TextStyle(
               color: AppColor.secondaryColor,

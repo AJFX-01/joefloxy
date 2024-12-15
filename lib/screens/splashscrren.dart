@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joefloxy/utils/constant_utils.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -8,11 +9,15 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: SizedBox(
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColor.whiteColor
+          ),
           child: Image.asset(
             'assets/images/joefloxy.jpeg',
             width: 200,
             height: 200,
+            fit: BoxFit.cover,
           ),
         ),
       ),

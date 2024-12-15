@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/screens/auth/login.dart';
 import 'package:joefloxy/screens/onboarding.dart';
+import 'package:joefloxy/screens/splashscrren.dart';
+
+import '../screens/auth/signup.dart';
 
 class Routes {
-  static const onboardPage = '/';
+  static const splashPage = '/';
+  static const onboardPage = '/onboard';
   static const loginPage = '/login';
   static const signupPage = '/signup';
 
   static final Map<String, Widget Function(BuildContext)> pages = {
+    splashPage: (context) => const SplashScreen(),
     onboardPage: (context) => const OnboardingPage(),
     loginPage: (context) => const LoginPage(),
-    // signupPage: (context) => const SignupPage(),
+    signupPage: (context) => const SignUpPage(),
   };
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {

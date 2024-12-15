@@ -8,6 +8,7 @@ class AppColor {
 
   static Color whiteColor = const Color.fromARGB(255, 255, 255, 255);
   static Color blackColor = Colors.black;
+  static Color buttonColor = const Color.fromARGB(102, 131, 253, 131);
 }
 
 const onboarding = [

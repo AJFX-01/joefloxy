@@ -18,12 +18,12 @@ Widget indicator(Color color, double width) {
   );
 }
 
-PreferredSizeWidget appBar(String title) {
+PreferredSizeWidget appBar(String title, void Function() back) {
   return AppBar(
     elevation: 0,
     backgroundColor: AppColor.whiteColor,
     leading: IconButton(
-        onPressed: () {},
+        onPressed: back,
         icon: Icon(
           Icons.arrow_back_rounded,
           size: 23,
