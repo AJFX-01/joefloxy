@@ -40,6 +40,75 @@ PreferredSizeWidget appBar(String title, void Function() back) {
   );
 }
 
+PreferredSizeWidget appHome(
+    String greetings, String username, String? imageUrl) {
+  return AppBar(
+    backgroundColor: AppColor.whiteColor,
+    leading: Padding(
+      padding: const EdgeInsets.fromLTRB(15, 8, 0, 0),
+      child: CircleAvatar(
+        backgroundColor: AppColor.secondaryColorLighter,
+        radius: 5,
+        backgroundImage: imageUrl == null
+            ? const AssetImage('assets/images/prof.png')
+            : NetworkImage(imageUrl),
+      ),
+    ),
+    title: Padding(
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            greetings,
+            style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w400),
+          ),
+          Text(
+            username,
+            style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    ),
+    actions: [
+      Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+            color: Colors.grey[50], borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications_outlined,
+                  size: 20, color: AppColor.secondaryColorLight),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints()),
+        ),
+      ),
+      const SizedBox(
+        width: 10,
+      ),
+      Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+            color: Colors.grey[50], borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.settings_outlined,
+                  size: 20, color: AppColor.secondaryColorLight),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints()),
+        ),
+      ),
+            const SizedBox(
+        width: 15,
+      ),
+    ],
+  );
+}
+
 class TextFieldContainer extends StatelessWidget {
   final Widget child;
   final String labeltext;
@@ -107,7 +176,6 @@ class AppButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius!,
             side: borderSide ?? BorderSide.none,
-            
           ),
         ),
         child: Text(

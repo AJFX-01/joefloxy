@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joefloxy/utils/widget_utils.dart';
 
 import '../../utils/constant_utils.dart';
 
@@ -14,8 +15,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
-      appBar: ,
-      body: ,
+      appBar: appHome("Good Morning", "Nadia McMiller", null),
+      body: SingleChildScrollView(),
+      bottomSheet: ,
     );
   }
 }
