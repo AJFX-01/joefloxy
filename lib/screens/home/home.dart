@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joefloxy/utils/bottom_menu.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 
 import '../../utils/constant_utils.dart';
@@ -21,8 +22,7 @@ class _HomePageState extends State<HomePage> {
           child: Text("Welcome"),
         ),
       ),
-      // bottomSheet: bottomSheet(),
-      floatingActionButton: bottomSheet(),
+      floatingActionButton: const BottomMenu(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
