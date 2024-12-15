@@ -41,3 +41,5 @@ const onboarding = [
     "buttontext": 'Get Started'
   }
 ];
+
+const List<Map<dynamic, dynamic>> bottomMenu = [{},{},{},{},{}];

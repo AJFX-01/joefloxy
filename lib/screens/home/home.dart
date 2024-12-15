@@ -15,9 +15,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
-      appBar: appHome("Good Morning", "Nadia McMiller", null),
-      body: SingleChildScrollView(),
-      bottomSheet: ,
+      appBar: appHome("Good Morning👋", "Nadia McMiller", null),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text("Welcome"),
+        ),
+      ),
+      // bottomSheet: bottomSheet(),
+      floatingActionButton: bottomSheet(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
