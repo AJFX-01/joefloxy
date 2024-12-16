@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:joefloxy/utils/bottom_menu.dart';
-import 'package:joefloxy/utils/widget_utils.dart';
-
+import 'package:joefloxy/screens/home/components/bottom_menu.dart';
 import '../../utils/constant_utils.dart';
+import 'components/appbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,9 +17,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColor.whiteColor,
       appBar: appHome("Good Morning👋", "Nadia McMiller", null),
       body: SingleChildScrollView(
-        child: Center(
-          child: Text("Welcome"),
-        ),
+
       ),
       floatingActionButton: const BottomMenu(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

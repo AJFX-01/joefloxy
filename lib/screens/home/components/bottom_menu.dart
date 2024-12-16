@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'constant_utils.dart';
-import 'routes.dart';
+import '../../../utils/constant_utils.dart';
+import '../../../utils/routes.dart';
 
 class BottomMenu extends StatefulWidget {
   const BottomMenu({super.key});
@@ -46,14 +46,9 @@ class _BottomMenuState extends State<BottomMenu> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(bottomMenu.length, 
               (index) => bottomDetails(
-                bottomMenu[index].title , bottomMenu[index].icon, index, bottomMenu[index].title) )
-            //[
-            //   bottomDetails("Home", Icons.home_outlined, 0, ),
-            //   bottomDetails("Cart", Icons.shopping_cart_outlined, 1),
-            //   bottomDetails("Orders", Icons.shopping_bag_outlined, 2),
-            //   bottomDetails("Wallet", Icons.wallet_outlined, 3),
-            //   bottomDetails("Profile", Icons.person_outlined, 4),
-            // ],
+                bottomMenu[index].title , bottomMenu[index].icon, index, bottomMenu[index].title
+                )
+              )
           ),
         ),
       ),
