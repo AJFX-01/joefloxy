@@ -59,7 +59,7 @@ class _CategorySectionState extends State<CategorySection> {
             child: Icon(icon, size: 25, color: iconColor,),
           ),
           const SizedBox(height: 10),
-          Text(title, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColor.blackColor)),
+          Text(title, style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AppColor.blackColor)),
         ],
       ),
     );

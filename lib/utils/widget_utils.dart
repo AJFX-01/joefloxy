@@ -122,7 +122,9 @@ class AppButton extends StatelessWidget {
   }
 }
 
-Widget titleHeader(String title, String route, BuildContext context) {
+Widget titleHeader(
+    String title, String? route, BuildContext context, bool showButton) {
+
   return SizedBox(
       height: 40,
       width: double.infinity,
@@ -130,9 +132,14 @@ Widget titleHeader(String title, String route, BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColor.secondaryColor,)),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: AppColor.secondaryColor,
+              )),
+          showButton ?
           TextButton(
-            onPressed: () => {Routes.navigate(context, routeName: route)},
+            onPressed: () => {Routes.navigate(context, routeName: route!)},
             style: TextButton.styleFrom(
                 padding: EdgeInsets.zero, minimumSize: Size.zero),
             child: Text(
@@ -142,7 +149,7 @@ Widget titleHeader(String title, String route, BuildContext context) {
               ),
               "See All",
             ),
-          ),
+          ) : const Text("")
         ],
       ));
 }

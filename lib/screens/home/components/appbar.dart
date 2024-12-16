@@ -49,7 +49,7 @@ PreferredSizeWidget appHome(
           child: IconButton(
               onPressed: () {},
               icon: Icon(Icons.notifications_outlined,
-                  size: 20, color: AppColor.greyColor),
+                  size: 20, color: AppColor.secondaryColor),
               padding: EdgeInsets.zero,
               constraints: const BoxConstraints()),
         ),
@@ -73,7 +73,7 @@ PreferredSizeWidget appHome(
           child: IconButton(
               onPressed: () {},
               icon: Icon(Icons.settings_outlined,
-                  size: 20, color: AppColor.greyColor),
+                  size: 20, color: AppColor.secondaryColor),
               padding: EdgeInsets.zero,
               constraints: const BoxConstraints()),
         ),

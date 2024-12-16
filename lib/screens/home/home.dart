@@ -25,10 +25,12 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 10,),
+              titleHeader("Categories", "", context, false),
+              const SizedBox(height: 5,),
               const CategorySection(),
-              const SizedBox(height: 20,),
-              titleHeader("Most Popular", "popular", context)
+              const SizedBox(height: 15,),
+              titleHeader("Most Popular", "popular", context, true)
             ],
           ),
         ),
