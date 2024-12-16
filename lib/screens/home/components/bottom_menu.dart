@@ -71,7 +71,7 @@ class _BottomMenuState extends State<BottomMenu> {
             size: 20,
             color: activeIndex == index
                 ? AppColor.secondaryColor
-                : AppColor.blackColor,
+                : AppColor.greyColor,
           ),
           Text(title,
               style: TextStyle(
@@ -79,7 +79,7 @@ class _BottomMenuState extends State<BottomMenu> {
                 fontWeight: FontWeight.bold,
                 color: activeIndex == index
                     ? AppColor.secondaryColor
-                    : AppColor.blackColor,
+                    : AppColor.greyColor,
               ))
         ],
       ),

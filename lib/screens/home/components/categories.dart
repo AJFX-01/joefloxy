@@ -17,17 +17,22 @@ class _CategorySectionState extends State<CategorySection> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            category("Sofa", Colors.pink[200], Icons.chair, Colors.pink[800]),
-            category("Chair", Colors.blue[200], Icons.chair_alt, Colors.blue[800]),
-            category("Table", Colors.amber[200], Icons.table_bar, Colors.amber[800]),
-            category("Kitchen", Colors.cyan[200], Icons.kitchen, Colors.cyan[800])
+            category("Sofa", Colors.pink[50], Icons.chair, Colors.pink[800]),
+            category("Chair", Colors.blue[50], Icons.chair_alt, Colors.blue[800]),
+            category("Table", Colors.amber[50], Icons.table_bar, Colors.amber[800]),
+            category("Kitchen", Colors.cyan[50], Icons.kitchen, Colors.cyan[800])
           ],
         ),
        const SizedBox(height: 20,),
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [],
-        // )
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            category("Lamps", Colors.green[50], Icons.light, Colors.green[800]),
+            category("Wardrobe", Colors.purple[50], Icons.shelves, Colors.purple[800]),
+            category("Vase", Colors.yellow[50], Icons.leaf, Colors.yellow[800]),
+            category("Others", Colors.amberAccent[100], Icons.widgets, Colors.amberAccent[700])
+          ],
+        )
       ],
     );
   }
@@ -41,16 +46,16 @@ class _CategorySectionState extends State<CategorySection> {
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 50,
-            width: 50,
+            height: 60,
+            width: 60,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: backgroundColor
             ),
-            child: Icon(icon, size: 24, color: iconColor,),
+            child: Icon(icon, size: 25, color: iconColor,),
           ),
           const SizedBox(height: 12),
-          Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppColor.blackColor)),
+          Text(title, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColor.blackColor)),
         ],
       ),
     );

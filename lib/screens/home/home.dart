@@ -18,13 +18,16 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColor.whiteColor,
       appBar: appHome("Good Morning👋", "Nadia McMiller", null),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            searchBar(),
-            SizedBox(height: 50,),
-            const CategorySection()
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              searchBar(),
+              const SizedBox(height: 50,),
+              const CategorySection()
+            ],
+          ),
         ),
       ),
       floatingActionButton: const BottomMenu(),

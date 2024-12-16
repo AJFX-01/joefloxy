@@ -87,31 +87,28 @@ PreferredSizeWidget appHome(
 
 
 Widget searchBar() {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 15),
-    child: Container(
-      height: 55,
-      margin: const EdgeInsets.only(top: 15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey[50]
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 1),
-        child: TextField(
-          decoration: InputDecoration(
-            prefixIcon:  const Icon(Icons.find_in_page_outlined, color: Colors.grey, size: 20,),
-            suffixIcon: const Icon(Icons.filter_list_outlined, color: Colors.grey, size: 20,),
-            hintText: 'Search',
-            hintStyle: const TextStyle(
-              color: Colors.grey,
-              fontSize: 15,
-              fontWeight: FontWeight.w400
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide.none,
-            ),
+  return Container(
+    height: 55,
+    margin: const EdgeInsets.only(top: 15),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.grey[50]
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 1),
+      child: TextField(
+        decoration: InputDecoration(
+          prefixIcon:  const Icon(Icons.find_in_page_outlined, color: Colors.grey, size: 20,),
+          suffixIcon: const Icon(Icons.filter_list_outlined, color: Colors.grey, size: 20,),
+          hintText: 'Search',
+          hintStyle: const TextStyle(
+            color: Colors.grey,
+            fontSize: 15,
+            fontWeight: FontWeight.w400
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide.none,
           ),
         ),
       ),
