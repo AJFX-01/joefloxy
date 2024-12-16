@@ -19,6 +19,16 @@ class Routes {
   static const profilePage = '/profile';
   static const walletPage = '/wallet';
 
+
+  static const sofaPage = '/sofa';
+  static const chairPage = '/chair';
+  static const tablePage = '/table';
+  static const kitchenPage = '/kitchen';
+  static const lampPage = '/lamp';
+  static const wardrobePage = '/wardrobe';
+  static const vasePage = '/vase';
+  static const othersPage = '/others';
+
   static final Map<String, Widget Function(BuildContext)> pages = {
     splashPage: (context) => const SplashScreen(),
     onboardPage: (context) => const OnboardingPage(),

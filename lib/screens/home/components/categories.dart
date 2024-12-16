@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/utils/constant_utils.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../../../utils/routes.dart';
 
 
 class CategorySection extends StatefulWidget {
@@ -19,7 +22,7 @@ class _CategorySectionState extends State<CategorySection> {
           children: [
             category("Sofa", Colors.pink[50], Icons.chair, Colors.pink[800]),
             category("Chair", Colors.blue[50], Icons.chair_alt, Colors.blue[800]),
-            category("Table", Colors.amber[50], Icons.table_bar, Colors.amber[800]),
+            category("Table", Colors.amber[50], Icons.table_restaurant, Colors.amber[800]),
             category("Kitchen", Colors.cyan[50], Icons.kitchen, Colors.cyan[800])
           ],
         ),
@@ -27,10 +30,10 @@ class _CategorySectionState extends State<CategorySection> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            category("Lamps", Colors.green[50], Icons.light, Colors.green[800]),
+            category("Lamps", Colors.green[50], MdiIcons.lamps, Colors.green[800]),
             category("Wardrobe", Colors.purple[50], Icons.shelves, Colors.purple[800]),
-            category("Vase", Colors.yellow[50], Icons.leaf, Colors.yellow[800]),
-            category("Others", Colors.amberAccent[100], Icons.widgets, Colors.amberAccent[700])
+            category("Vase", Colors.yellow[50], MdiIcons.flowerPollen, Colors.yellow[800]),
+            category("Others", Colors.red[100], Icons.widgets, Colors.red[800])
           ],
         )
       ],
@@ -38,12 +41,13 @@ class _CategorySectionState extends State<CategorySection> {
   }
 
 
-  Widget category(String title, Color? backgroundColor, IconData icon, Color? iconColor) {
+  Widget category(String title, Color? backgroundColor, IconData icon, Color? iconColor,) {
     return GestureDetector(
-      onTap: () => {},
+      onTap: () => {
+        Routes.navigate(context, routeName: "/$title")
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 60,
@@ -54,8 +58,8 @@ class _CategorySectionState extends State<CategorySection> {
             ),
             child: Icon(icon, size: 25, color: iconColor,),
           ),
-          const SizedBox(height: 12),
-          Text(title, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColor.blackColor)),
+          const SizedBox(height: 10),
+          Text(title, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColor.blackColor)),
         ],
       ),
     );

@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-              const SizedBox(height: 50,),
+              const SizedBox(height: 20,),
               const CategorySection()
             ],
           ),
