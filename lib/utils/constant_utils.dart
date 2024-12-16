@@ -4,9 +4,12 @@ import 'package:joefloxy/models/bottom_menu_model.dart';
 import 'routes.dart';
 
 class AppColor {
-  static Color secondaryColor = const Color.fromARGB(217, 60, 227, 60);
-  static Color secondaryColorLight = const Color.fromARGB(255, 109, 249, 109);
-  static Color secondaryColorLighter = const Color.fromARGB(255, 209, 246, 209);
+  // static Color secondaryColor = const Color.fromARGB(217, 60, 227, 60);
+  // static Color secondaryColorLight = const Color.fromARGB(255, 109, 249, 109);
+  // static Color secondaryColorLighter = const Color.fromARGB(255, 209, 246, 209);
+  static Color? secondaryColor = Colors.green[700];
+  static Color? secondaryColorLight = Colors.green[300];
+  static Color? secondaryColorLighter = Colors.green[50];
   static Color primaryColor = const Color.fromARGB(255, 59, 134, 232);
 
   static Color whiteColor = const Color.fromARGB(255, 255, 255, 255);

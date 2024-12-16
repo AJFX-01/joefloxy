@@ -32,7 +32,7 @@ class _CategorySectionState extends State<CategorySection> {
           children: [
             category("Lamps", Colors.green[50], MdiIcons.lamps, Colors.green[800]),
             category("Wardrobe", Colors.purple[50], Icons.shelves, Colors.purple[800]),
-            category("Vase", Colors.yellow[50], MdiIcons.flowerPollen, Colors.yellow[800]),
+            category("Vase", Colors.teal[50], MdiIcons.flowerPollen, Colors.teal[800]),
             category("Others", Colors.red[100], Icons.widgets, Colors.red[800])
           ],
         )

@@ -76,7 +76,7 @@ class _BottomMenuState extends State<BottomMenu> {
           Text(title,
               style: TextStyle(
                 fontSize: 9,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 color: activeIndex == index
                     ? AppColor.secondaryColor
                     : AppColor.greyColor,

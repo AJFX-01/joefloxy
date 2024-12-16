@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'constant_utils.dart';
+import 'routes.dart';
 
-Widget indicator(Color color, double width) {
+Widget indicator(Color? color, double width) {
   return SizedBox(
     height: 7,
     width: width,
@@ -39,7 +40,6 @@ PreferredSizeWidget appBar(String title, void Function() back) {
     centerTitle: true,
   );
 }
-
 
 class TextFieldContainer extends StatelessWidget {
   final Widget child;
@@ -122,4 +122,27 @@ class AppButton extends StatelessWidget {
   }
 }
 
-
+Widget titleHeader(String title, String route, BuildContext context) {
+  return SizedBox(
+      height: 40,
+      width: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColor.secondaryColor,)),
+          TextButton(
+            onPressed: () => {Routes.navigate(context, routeName: route)},
+            style: TextButton.styleFrom(
+                padding: EdgeInsets.zero, minimumSize: Size.zero),
+            child: Text(
+              style: TextStyle(
+                color: AppColor.secondaryColor,
+                fontSize: 13,
+              ),
+              "See All",
+            ),
+          ),
+        ],
+      ));
+}
