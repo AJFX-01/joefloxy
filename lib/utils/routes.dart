@@ -11,7 +11,13 @@ class Routes {
   static const onboardPage = '/onboard';
   static const loginPage = '/login';
   static const signupPage = '/signup';
+
+
   static const homePage = '/home';
+  static const cartPage = '/cart';
+  static const orderPage = '/order';
+  static const profilePage = '/profile';
+  static const walletPage = '/wallet';
 
   static final Map<String, Widget Function(BuildContext)> pages = {
     splashPage: (context) => const SplashScreen(),

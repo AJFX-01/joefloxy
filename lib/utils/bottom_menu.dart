@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constant_utils.dart';
+import 'routes.dart';
 
 class BottomMenu extends StatefulWidget {
   const BottomMenu({super.key});
@@ -11,6 +12,7 @@ class BottomMenu extends StatefulWidget {
 
 class _BottomMenuState extends State<BottomMenu> {
   int activeIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -42,24 +44,30 @@ class _BottomMenuState extends State<BottomMenu> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              bottomDetails("Home", Icons.home_outlined, 0),
-              bottomDetails("Cart", Icons.shopping_cart_outlined, 1),
-              bottomDetails("Orders", Icons.shopping_bag_outlined, 2),
-              bottomDetails("Wallet", Icons.wallet_outlined, 3),
-              bottomDetails("Profile", Icons.person_outlined, 4),
-            ],
+            children: List.generate(bottomMenu.length, 
+              (index) => bottomDetails(
+                bottomMenu[index].title , bottomMenu[index].icon, index, bottomMenu[index].title) )
+            //[
+            //   bottomDetails("Home", Icons.home_outlined, 0, ),
+            //   bottomDetails("Cart", Icons.shopping_cart_outlined, 1),
+            //   bottomDetails("Orders", Icons.shopping_bag_outlined, 2),
+            //   bottomDetails("Wallet", Icons.wallet_outlined, 3),
+            //   bottomDetails("Profile", Icons.person_outlined, 4),
+            // ],
           ),
         ),
       ),
     );
   }
 
-  Widget bottomDetails(String title, IconData icon, int index) {
+  Widget bottomDetails(String title, IconData icon, int index, String route) {
     return GestureDetector(
-      onTap: () => setState(() {
-        activeIndex = index;
-      }),
+      onTap: () {
+        setState(() {
+          activeIndex = index;
+        });
+        Routes.navigate(context, routeName: route);
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

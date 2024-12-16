@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:joefloxy/models/bottom_menu_model.dart';
+
+import 'routes.dart';
 
 class AppColor {
   static Color secondaryColor = const Color.fromARGB(217, 60, 227, 60);
@@ -42,4 +45,30 @@ const onboarding = [
   }
 ];
 
-const List<Map<dynamic, dynamic>> bottomMenu = [{},{},{},{},{}];
+List<BottomMenuModel> bottomMenu = [
+  BottomMenuModel(
+    icon: Icons.home_outlined,
+    title: 'Home',
+    route: Routes.homePage,
+  ),
+  BottomMenuModel(
+    icon: Icons.shopping_cart_outlined,
+    title: 'Cart',
+    route: Routes.cartPage,
+  ),
+  BottomMenuModel(
+    icon: Icons.shopping_bag_outlined,
+    title: 'Orders',
+    route: Routes.orderPage,
+  ),
+  BottomMenuModel(
+    icon: Icons.wallet_outlined,
+    title: 'Wallet',
+    route: Routes.walletPage,
+  ),
+  BottomMenuModel(
+    icon: Icons.person_outlined,
+    title: 'Profile',
+    route: Routes.profilePage,
+  )
+];
