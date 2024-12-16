@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/screens/home/components/bottom_menu.dart';
+import 'package:joefloxy/screens/home/components/categories.dart';
 import '../../utils/constant_utils.dart';
 import 'components/appbar.dart';
 
@@ -17,7 +18,14 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColor.whiteColor,
       appBar: appHome("Good Morning👋", "Nadia McMiller", null),
       body: SingleChildScrollView(
-
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            searchBar(),
+            SizedBox(height: 50,),
+            const CategorySection()
+          ],
+        ),
       ),
       floatingActionButton: const BottomMenu(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
