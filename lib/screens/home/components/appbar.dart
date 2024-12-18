@@ -98,8 +98,8 @@ Widget searchBar() {
       padding: const EdgeInsets.symmetric(horizontal: 1),
       child: TextField(
         decoration: InputDecoration(
-          prefixIcon:  const Icon(Icons.find_in_page_outlined, color: Colors.grey, size: 20,),
-          suffixIcon: const Icon(Icons.filter_list_outlined, color: Colors.grey, size: 20,),
+          prefixIcon:  Icon(Icons.find_in_page_outlined, color: AppColor.secondaryColor, size: 20,),
+          suffixIcon:Icon(Icons.filter_list_outlined, color: AppColor.secondaryColor, size: 20,),
           hintText: 'Search',
           hintStyle: const TextStyle(
             color: Colors.grey,

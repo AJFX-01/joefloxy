@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/screens/home/components/bottom_menu.dart';
 import 'package:joefloxy/screens/home/components/categories.dart';
+import 'package:joefloxy/screens/home/components/tab.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 import '../../utils/constant_utils.dart';
 import 'components/appbar.dart';
@@ -30,7 +31,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 5,),
               const CategorySection(),
               const SizedBox(height: 15,),
-              titleHeader("Most Popular", "popular", context, true)
+              titleHeader("Most Popular", "popular", context, true),
+              const TabSection(),
             ],
           ),
         ),
