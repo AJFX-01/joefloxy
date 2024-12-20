@@ -153,3 +153,143 @@ Widget titleHeader(
         ],
       ));
 }
+
+
+class ProductCard extends StatelessWidget {
+  final String imageUrl;
+  final String title;
+  final String manufacturer;
+  final double price;
+  final double rating;
+
+  const ProductCard({
+    super.key,
+    required this.imageUrl,
+    required this.title,
+    required this.manufacturer,
+    required this.price,
+    required this.rating,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Image and favorite button
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  imageUrl,
+                  height: 120,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const Positioned(
+                top: 8,
+                right: 8,
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 14,
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: Colors.grey,
+                    size: 18,
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 8),
+
+          // Product title
+          Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+              color: Colors.black,
+            ),
+          ),
+
+          const SizedBox(height: 4),
+
+          // Manufacturer and rating
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                manufacturer,
+                style: TextStyle(
+                  color: Colors.grey[600],
+                  fontSize: 12,
+                ),
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 16,
+                  ),
+                  Text(
+                    "($rating)",
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 8),
+
+          // Price and add-to-cart button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "\$$price",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Colors.green,
+                ),
+              ),
+              const CircleAvatar(
+                backgroundColor: Colors.green,
+                radius: 16,
+                child:  Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 18,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
