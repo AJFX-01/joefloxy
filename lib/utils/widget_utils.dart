@@ -124,7 +124,6 @@ class AppButton extends StatelessWidget {
 
 Widget titleHeader(
     String title, String? route, BuildContext context, bool showButton) {
-
   return SizedBox(
       height: 40,
       width: double.infinity,
@@ -137,23 +136,24 @@ Widget titleHeader(
                 fontWeight: FontWeight.bold,
                 color: AppColor.secondaryColor,
               )),
-          showButton ?
-          TextButton(
-            onPressed: () => {Routes.navigate(context, routeName: route!)},
-            style: TextButton.styleFrom(
-                padding: EdgeInsets.zero, minimumSize: Size.zero),
-            child: Text(
-              style: TextStyle(
-                color: AppColor.secondaryColor,
-                fontSize: 13,
-              ),
-              "See All",
-            ),
-          ) : const Text("")
+          showButton
+              ? TextButton(
+                  onPressed: () =>
+                      {Routes.navigate(context, routeName: route!)},
+                  style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero, minimumSize: Size.zero),
+                  child: Text(
+                    style: TextStyle(
+                      color: AppColor.secondaryColor,
+                      fontSize: 13,
+                    ),
+                    "See All",
+                  ),
+                )
+              : const Text("")
         ],
       ));
 }
-
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
@@ -192,102 +192,98 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Image and favorite button
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  imageUrl,
-                  height: 120,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+          Align(
+            alignment: Alignment.topRight,
+            child: CircleAvatar(
+              backgroundColor: Colors.blueGrey[200],
+              radius: 10,
+              child: Icon(
+                Icons.favorite,
+                color: AppColor.whiteColor,
+                size: 14,
               ),
-              const Positioned(
-                top: 8,
-                right: 8,
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 14,
-                  child: Icon(
-                    Icons.favorite_border,
-                    color: Colors.grey,
-                    size: 18,
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 8),
-
-          // Product title
-          Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-              color: Colors.black,
             ),
           ),
-
-          const SizedBox(height: 4),
-
-          // Manufacturer and rating
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                manufacturer,
-                style: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 12,
-                ),
-              ),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                    size: 16,
+          const SizedBox(height: 5,),
+          Expanded(
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    imageUrl,
+                    height: 300,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
-                  Text(
-                    "($rating)",
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 8),
-
-          // Price and add-to-cart button
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "\$$price",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Colors.green,
                 ),
-              ),
-              const CircleAvatar(
-                backgroundColor: Colors.green,
-                radius: 16,
-                child:  Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  size: 18,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
+          // const SizedBox(height: 8),
+          // // Product title
+          // Text(
+          //   title,
+          //   style: const TextStyle(
+          //     fontWeight: FontWeight.bold,
+          //     fontSize: 14,
+          //     color: Colors.black,
+          //   ),
+          // ),
+          // const SizedBox(height: 4),
+          // // Manufacturer and rating
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Text(
+          //       manufacturer,
+          //       style: TextStyle(
+          //         color: Colors.grey[600],
+          //         fontSize: 12,
+          //       ),
+          //     ),
+          //     Row(
+          //       children: [
+          //         const Icon(
+          //           Icons.star,
+          //           color: Colors.amber,
+          //           size: 16,
+          //         ),
+          //         Text(
+          //           "($rating)",
+          //           style: TextStyle(
+          //             color: Colors.grey[600],
+          //             fontSize: 12,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(height: 8),
+          // // Price and add-to-cart button
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Text(
+          //       "\$$price",
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 16,
+          //         color: AppColor.secondaryColor
+          //       ),
+          //     ),
+          //     CircleAvatar(
+          //       backgroundColor: AppColor.secondaryColor,
+          //       radius: 16,
+          //       child:  Icon(
+          //         Icons.add,
+          //         color: AppColor.whiteColor,
+          //         size: 18,
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

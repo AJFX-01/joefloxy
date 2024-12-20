@@ -26,18 +26,28 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-              const SizedBox(height: 10,),
-              titleHeader("Categories", "", context, false),
-              const SizedBox(height: 5,),
-              const CategorySection(),
-              const SizedBox(height: 15,),
-              titleHeader("Most Popular", "popular", context, true),
-              const TabSection(),
-              ListView(
-                children: [
-                  ProductCard(imageUrl: imageUrl, title: title, manufacturer: manufacturer, price: price, rating: rating)
-                  ProductCard(imageUrl: imageUrl, title: title, manufacturer: manufacturer, price: price, rating: rating)
-                ],
+              // const SizedBox(height: 10,),
+              // titleHeader("Categories", "", context, false),
+              // const SizedBox(height: 5,),
+              // const CategorySection(),
+              // const SizedBox(height: 15,),
+              // titleHeader("Most Popular", "popular", context, true),
+              // const TabSection(),
+              SizedBox(
+                height: 1000,
+                child: GridView(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 4,
+                    mainAxisSpacing: 4,
+                    childAspectRatio: 0.8,
+                  ),
+                  scrollDirection: Axis.vertical,
+                  children: const [
+                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
+                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5)
+                  ],
+                ),
               )
             ],
           ),
