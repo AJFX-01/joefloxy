@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
+              const SizedBox(height: 10,),
               // ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
               // const SizedBox(height: 10,),
               // titleHeader("Categories", "", context, false),

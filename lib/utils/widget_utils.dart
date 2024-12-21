@@ -174,12 +174,12 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
+      // color: Colors.amber,
       child: Stack(
         children: [
           Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-           margin: const EdgeInsets.fromLTRB(8, 100, 8, 0),
+           margin: const EdgeInsets.fromLTRB(8, 80, 8, 0),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
@@ -271,7 +271,7 @@ class ProductCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                 margin: const EdgeInsets.symmetric(vertical: 100, horizontal: 8),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 250, 240, 237),
+                  color: const Color.fromARGB(255, 255, 243, 237),
                   borderRadius: BorderRadius.circular(12),
                   // boxShadow: [
                   //   BoxShadow(
@@ -303,7 +303,7 @@ class ProductCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
                         imageUrl,
-                        height: 100,
+                        height: 120,
                         width: 100,
                         fit: BoxFit.contain,
                       ),
