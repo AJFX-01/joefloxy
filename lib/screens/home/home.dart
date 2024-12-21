@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-              ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
+
               // const SizedBox(height: 10,),
               // titleHeader("Categories", "", context, false),
               // const SizedBox(height: 5,),
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 4,
-                    childAspectRatio: 0.8,
+                    childAspectRatio: 1.1,
                   ),
                   scrollDirection: Axis.vertical,
                   children: const [
