@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-
+              // ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
               // const SizedBox(height: 10,),
               // titleHeader("Categories", "", context, false),
               // const SizedBox(height: 5,),
@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 4,
-                    mainAxisSpacing: 4,
-                    childAspectRatio: 1.1,
+                    mainAxisSpacing: 8,
+                    childAspectRatio: 0.5,
                   ),
                   scrollDirection: Axis.vertical,
                   children: const [
