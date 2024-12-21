@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
+              ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
               // const SizedBox(height: 10,),
               // titleHeader("Categories", "", context, false),
               // const SizedBox(height: 5,),
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 1000,
                 child: GridView(
+                  // padding: EdgeInsets.symmetric(vertical: 24),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 4,
@@ -44,6 +46,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   scrollDirection: Axis.vertical,
                   children: const [
+                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
+                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
+                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
+                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
                     ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
                     ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5)
                   ],
