@@ -5,6 +5,7 @@ import 'package:joefloxy/screens/splashscrren.dart';
 
 import '../screens/auth/signup.dart';
 import '../screens/home/home.dart';
+import '../screens/profile/profile.dart';
 
 class Routes {
   static const splashPage = '/';
@@ -36,6 +37,8 @@ class Routes {
     signupPage: (context) => const SignUpPage(),
 
     homePage: (context) => const HomePage(),
+
+    profilePage: (context) => const ProfilePage(),
   };
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {

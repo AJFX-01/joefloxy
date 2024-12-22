@@ -14,12 +14,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool obscurePassword = false;
   bool _rememberMe = false;
-  void prevPage() => Navigator.pop(context);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBar("Log In", prevPage),
+        appBar: appBar("Log In", context),
         backgroundColor: AppColor.whiteColor,
         body: SingleChildScrollView(
           child: Padding(

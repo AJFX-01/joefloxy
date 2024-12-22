@@ -33,7 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
         appBar: appBar(
           "Create Account",
-          prevPage
+          context
         ),
         backgroundColor: AppColor.whiteColor,
         body: SingleChildScrollView(

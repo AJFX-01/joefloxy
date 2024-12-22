@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: const BottomMenu(),
+      floatingActionButton: const BottomMenu(active: 0,),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

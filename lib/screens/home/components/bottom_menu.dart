@@ -4,7 +4,8 @@ import '../../../utils/constant_utils.dart';
 import '../../../utils/routes.dart';
 
 class BottomMenu extends StatefulWidget {
-  const BottomMenu({super.key});
+  final int active;
+  const BottomMenu({required this.active, super.key});
 
   @override
   State<BottomMenu> createState() => _BottomMenuState();
@@ -17,7 +18,7 @@ class _BottomMenuState extends State<BottomMenu> {
   void initState() {
     super.initState();
     setState(() {
-      activeIndex = 0;
+      activeIndex = widget.active;
     });
   }
 
@@ -42,14 +43,12 @@ class _BottomMenuState extends State<BottomMenu> {
             ]),
         child: Center(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: List.generate(bottomMenu.length, 
-              (index) => bottomDetails(
-                bottomMenu[index].title , bottomMenu[index].icon, index, bottomMenu[index].title
-                )
-              )
-          ),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(
+                  bottomMenu.length,
+                  (index) => bottomDetails(bottomMenu[index].title,
+                      bottomMenu[index].icon, index, bottomMenu[index].route))),
         ),
       ),
     );

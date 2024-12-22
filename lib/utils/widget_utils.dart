@@ -19,12 +19,12 @@ Widget indicator(Color? color, double width) {
   );
 }
 
-PreferredSizeWidget appBar(String title, void Function() back) {
+PreferredSizeWidget appBar(String title, BuildContext context, {bool isProfile = false}) {
   return AppBar(
     elevation: 0,
     backgroundColor: AppColor.whiteColor,
     leading: IconButton(
-        onPressed: back,
+        onPressed: () => Navigator.pop(context),
         icon: Icon(
           Icons.arrow_back_rounded,
           size: 23,
@@ -33,11 +33,59 @@ PreferredSizeWidget appBar(String title, void Function() back) {
     title: Text(
       title,
       style: TextStyle(
-          color: AppColor.secondaryColorLight,
-          fontSize: 18,
+          color: AppColor.secondaryColor,
+          fontSize: 17,
           fontWeight: FontWeight.w500),
     ),
     centerTitle: true,
+    actions: [
+      isProfile ?
+      Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1), 
+                blurRadius: 5, 
+                offset: Offset.zero
+              )
+            ],
+            color: AppColor.whiteColor, borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.edit_outlined,
+                  size: 20, color: AppColor.secondaryColor),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints()),
+        ),
+      ) :
+      Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1), 
+                blurRadius: 5, 
+                offset: Offset.zero
+              )
+            ],
+            color: AppColor.whiteColor, borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications_outlined,
+                  size: 20, color: AppColor.secondaryColor),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints()),
+        ),
+      ),
+      const SizedBox(
+        width: 15,
+      ),
+    ],
   );
 }
 
