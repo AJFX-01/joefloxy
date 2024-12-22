@@ -26,19 +26,21 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               searchBar(),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               // ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
               // const SizedBox(height: 10,),
-              // titleHeader("Categories", "", context, false),
-              // const SizedBox(height: 5,),
-              // const CategorySection(),
-              // const SizedBox(height: 15,),
-              // titleHeader("Most Popular", "popular", context, true),
-              // const TabSection(),
+              titleHeader("Categories", "", context, false),
+              const SizedBox(height: 5,),
+              const CategorySection(),
+              const SizedBox(height: 15,),
+              titleHeader("Most Popular", "popular", context, true),
+              const TabSection(),
               SizedBox(
                 height: 1000,
                 child: GridView(
-                  // padding: EdgeInsets.symmetric(vertical: 24),
+                  padding: const EdgeInsets.only(top: 5, right: 10, left: 10),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 4,
@@ -47,12 +49,42 @@ class _HomePageState extends State<HomePage> {
                   ),
                   scrollDirection: Axis.vertical,
                   children: const [
-                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
-                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
-                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
-                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5),
-                    ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
-                    ProductCard(imageUrl: "assets/images/product/chair3.png", title: "D4 Lounge", manufacturer: "FERERIX", price: 122.12, rating: 4.5)
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair4.png",
+                        title: "Modern Sofa",
+                        manufacturer: "LORNEXO",
+                        price: 299.99,
+                        rating: 4.5),
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair3.png",
+                        title: "D4 Lounge Chair",
+                        manufacturer: "FERERIX",
+                        price: 122.12,
+                        rating: 4.5),
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair4.png",
+                        title: "Modern Sofa",
+                        manufacturer: "LORNEXO",
+                        price: 299.99,
+                        rating: 4.5),
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair3.png",
+                        title: "D4 Lounge Chair",
+                        manufacturer: "FERERIX",
+                        price: 122.12,
+                        rating: 4.5),
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair4.png",
+                        title: "Modern Sofa",
+                        manufacturer: "LORNEXO",
+                        price: 299.99,
+                        rating: 4.5),
+                    ProductCard(
+                        imageUrl: "assets/images/product/chair3.png",
+                        title: "D4 Lounge Chair",
+                        manufacturer: "FERERIX",
+                        price: 122.12,
+                        rating: 4.5)
                   ],
                 ),
               )

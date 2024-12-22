@@ -155,7 +155,7 @@ Widget titleHeader(
       ));
 }
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String manufacturer;
@@ -172,149 +172,164 @@ class ProductCard extends StatelessWidget {
   });
 
   @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+
+  bool isFavorite = false;
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.amber,
-      child: Stack(
-        children: [
-          Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-           margin: const EdgeInsets.fromLTRB(8, 80, 8, 0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-              const SizedBox(height: 90),
-                // Product title
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                // Manufacturer and rating
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      manufacturer,
-                      style: TextStyle(
-                        color: Colors.grey[600],
+    return Stack(
+      children: [
+        Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+         margin: const EdgeInsets.fromLTRB(8, 80, 8, 0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+            const SizedBox(height: 90),
+              // Product title
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 70,
+                    child: Text(
+                      widget.title,
+                      style:TextStyle(
+                        fontWeight: FontWeight.bold,
                         fontSize: 12,
+                        color: AppColor.secondaryColor,
                       ),
                     ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 16,
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 13,
+                      ),
+                      Text(
+                        "(${widget.rating})",
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 10,
                         ),
-                        Text(
-                          "($rating)",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 12,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 2),
+              // Manufacturer and rating
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    (widget.manufacturer.toUpperCase()),
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 9,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 2),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\$${widget.price}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10,
+                      color: AppColor.secondaryColor
+                    ),
+                  ),
+                  CircleAvatar(
+                    backgroundColor: AppColor.secondaryColor,
+                    radius: 10,
+                    child:  Icon(
+                      Icons.add,
+                      color: AppColor.whiteColor,
+                      size: 13,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 20,
+          left: 15,
+          child: IntrinsicHeight(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              margin: const EdgeInsets.symmetric(vertical: 100, horizontal: 8),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(219, 249, 246, 235),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const SizedBox(width: 80,),
+                      GestureDetector(
+                        onTap: () => toggleFavorite(),
+                        child: CircleAvatar(
+                          backgroundColor: isFavorite ? Colors.red : Colors.blueGrey[200], 
+                          radius: 10,
+                          child: Icon(
+                            Icons.favorite,
+                            color: AppColor.whiteColor,
+                            size: 14,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                // Price and add-to-cart button
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "\$$price",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: AppColor.secondaryColor
                       ),
+                    ],
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      widget.imageUrl,
+                      height: 110,
+                      width: 100,
+                      fit: BoxFit.contain,
                     ),
-                    CircleAvatar(
-                      backgroundColor: AppColor.secondaryColor,
-                      radius: 16,
-                      child:  Icon(
-                        Icons.add,
-                        color: AppColor.whiteColor,
-                        size: 18,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            bottom: 40,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                margin: const EdgeInsets.symmetric(vertical: 100, horizontal: 8),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 255, 243, 237),
-                  borderRadius: BorderRadius.circular(12),
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     color: Colors.grey.withOpacity(0.2),
-                  //     spreadRadius: 2,
-                  //     blurRadius: 5,
-                  //     offset: const Offset(0, 2),
-                  //   ),
-                  // ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Image and favorite button
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.blueGrey[200],
-                        radius: 10,
-                        child: Icon(
-                          Icons.favorite,
-                          color: AppColor.whiteColor,
-                          size: 14,
-                        ),
-                      ),
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        imageUrl,
-                        height: 120,
-                        width: 100,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
+  }
+
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
   }
 }
