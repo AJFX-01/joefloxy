@@ -5,7 +5,9 @@ import 'package:joefloxy/screens/splashscrren.dart';
 
 import '../screens/auth/signup.dart';
 import '../screens/home/home.dart';
+import '../screens/profile/edit_profile.dart';
 import '../screens/profile/profile.dart';
+
 
 class Routes {
   static const splashPage = '/';
@@ -30,6 +32,8 @@ class Routes {
   static const vasePage = '/vase';
   static const othersPage = '/others';
 
+  static const editprofilePage = '/editprofile';
+
   static final Map<String, Widget Function(BuildContext)> pages = {
     splashPage: (context) => const SplashScreen(),
     onboardPage: (context) => const OnboardingPage(),
@@ -37,8 +41,9 @@ class Routes {
     signupPage: (context) => const SignUpPage(),
 
     homePage: (context) => const HomePage(),
-
     profilePage: (context) => const ProfilePage(),
+
+    editprofilePage: (context) => const EditProfilePage(),
   };
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {

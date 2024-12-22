@@ -19,7 +19,12 @@ Widget indicator(Color? color, double width) {
   );
 }
 
-PreferredSizeWidget appBar(String title, BuildContext context, {bool isProfile = false}) {
+PreferredSizeWidget appBar(String title, BuildContext context,
+    {bool isProfile = false}) {
+  void editProfile() {
+    Routes.navigate(context, routeName: Routes.editprofilePage);
+  }
+
   return AppBar(
     elevation: 0,
     backgroundColor: AppColor.whiteColor,
@@ -39,49 +44,50 @@ PreferredSizeWidget appBar(String title, BuildContext context, {bool isProfile =
     ),
     centerTitle: true,
     actions: [
-      isProfile ?
-      Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1), 
-                blurRadius: 5, 
-                offset: Offset.zero
-              )
-            ],
-            color: AppColor.whiteColor, borderRadius: BorderRadius.circular(20)),
-        child: Center(
-          child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.edit_outlined,
-                  size: 20, color: AppColor.secondaryColor),
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints()),
-        ),
-      ) :
-      Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1), 
-                blurRadius: 5, 
-                offset: Offset.zero
-              )
-            ],
-            color: AppColor.whiteColor, borderRadius: BorderRadius.circular(20)),
-        child: Center(
-          child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.notifications_outlined,
-                  size: 20, color: AppColor.secondaryColor),
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints()),
-        ),
-      ),
+      isProfile
+          ? Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 5,
+                        offset: Offset.zero)
+                  ],
+                  color: AppColor.whiteColor,
+                  borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                child: IconButton(
+                    onPressed: () => editProfile(),
+                    icon: Icon(Icons.edit_outlined,
+                        size: 20, color: AppColor.secondaryColor),
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints()),
+              ),
+            )
+          : Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Colors.black.withOpacity(0.1),
+                  //     blurRadius: 5,
+                  //     offset: Offset.zero
+                  //   )
+                  // ],
+                  color: AppColor.whiteColor,
+                  borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.notifications_outlined,
+                        size: 20, color: AppColor.secondaryColor),
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints()),
+              ),
+            ),
       const SizedBox(
         width: 15,
       ),
@@ -224,15 +230,14 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
-
   bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-         margin: const EdgeInsets.fromLTRB(8, 80, 8, 0),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          margin: const EdgeInsets.fromLTRB(8, 80, 8, 0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
@@ -250,7 +255,7 @@ class _ProductCardState extends State<ProductCard> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-            const SizedBox(height: 90),
+              const SizedBox(height: 90),
               // Product title
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -259,7 +264,7 @@ class _ProductCardState extends State<ProductCard> {
                     width: 70,
                     child: Text(
                       widget.title,
-                      style:TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                         color: AppColor.secondaryColor,
@@ -305,15 +310,14 @@ class _ProductCardState extends State<ProductCard> {
                   Text(
                     "\$${widget.price}",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 10,
-                      color: AppColor.secondaryColor
-                    ),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 10,
+                        color: AppColor.secondaryColor),
                   ),
                   CircleAvatar(
                     backgroundColor: AppColor.secondaryColor,
                     radius: 10,
-                    child:  Icon(
+                    child: Icon(
                       Icons.add,
                       color: AppColor.whiteColor,
                       size: 13,
@@ -342,11 +346,14 @@ class _ProductCardState extends State<ProductCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const SizedBox(width: 80,),
+                      const SizedBox(
+                        width: 80,
+                      ),
                       GestureDetector(
                         onTap: () => toggleFavorite(),
                         child: CircleAvatar(
-                          backgroundColor: isFavorite ? Colors.red : Colors.blueGrey[200], 
+                          backgroundColor:
+                              isFavorite ? Colors.red : Colors.blueGrey[200],
                           radius: 10,
                           child: Icon(
                             Icons.favorite,

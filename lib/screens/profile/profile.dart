@@ -41,8 +41,8 @@ class _ProfilePageState extends State<ProfilePage> {
               profileItem("Payment Methods", "See or add your payment card", prevPage),
               profileItem("Settings", "Other profile settings", prevPage),
               profileItem("Help", "Contact support for assitances", prevPage),
-              profileItem("Push - Notifications", "Set up push notifications", prevPage),
-              profileItem("Log Out", "In case you want to log out", prevPage),
+              profileItem("Push - Notifications", "Set up push notifications", prevPage, isPush: true),
+              profileItem("Log Out", "In case you want to log out", prevPage, isLogout: true),
             ],
           ),
         ),
@@ -78,6 +78,28 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
+            isLogout ?
+            GestureDetector(
+              onTap: () => more,
+              child: Icon(
+                Icons.logout_outlined,
+                color: AppColor.secondaryColor,
+                size: 25,
+              ),
+            ) : isPush ?
+            Transform.scale(
+              scaleY: 0.6,
+              scaleX: 0.7,
+              child: Switch(
+                activeColor: AppColor.whiteColor,
+                activeTrackColor: AppColor.secondaryColor,
+                inactiveThumbColor: Colors.red,
+                inactiveTrackColor: AppColor.greyColor,
+                splashRadius: 5,
+                value: true,
+                onChanged: (value) {}
+              ),
+            ):
             GestureDetector(
               onTap: () => more,
               child: Icon(
