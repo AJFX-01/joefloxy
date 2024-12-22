@@ -117,7 +117,7 @@ class TextFieldContainer extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 5),
           decoration: BoxDecoration(
             color: AppColor.secondaryColorLighter,
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(15),
           ),
           child: child,
         ),
