@@ -5,6 +5,8 @@ import '../../../utils/constant_utils.dart';
 PreferredSizeWidget appHome(
     String greetings, String username, String? imageUrl) {
   return AppBar(
+    shadowColor: AppColor.whiteColor,
+    surfaceTintColor: AppColor.whiteColor,
     backgroundColor: AppColor.whiteColor,
     leading: Padding(
       padding: const EdgeInsets.fromLTRB(15, 8, 0, 0),

@@ -27,6 +27,8 @@ PreferredSizeWidget appBar(String title, BuildContext context,
 
   return AppBar(
     elevation: 0,
+    shadowColor: AppColor.whiteColor,
+    surfaceTintColor: AppColor.whiteColor,
     backgroundColor: AppColor.whiteColor,
     leading: IconButton(
         onPressed: () => Navigator.pop(context),
