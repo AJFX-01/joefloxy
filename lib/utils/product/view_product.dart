@@ -50,6 +50,35 @@ class _ViewProductScreenState extends State<ViewProductScreen> {
                     width: 250,
                   ),
                 ),
+              ), 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Modern Sofa Chair",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: AppColor.secondaryColor,
+                    ),
+                  ),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                          size: 20,
+                        ),
+                        Text(
+                          "(5.0)",
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                ],
               )
             ],
           ),
