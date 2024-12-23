@@ -50,7 +50,8 @@ class _ViewProductScreenState extends State<ViewProductScreen> {
                     width: 250,
                   ),
                 ),
-              ), 
+              ),
+              const SizedBox(height: 30,), 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -58,7 +59,7 @@ class _ViewProductScreenState extends State<ViewProductScreen> {
                     "Modern Sofa Chair",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                      fontSize: 16,
                       color: AppColor.secondaryColor,
                     ),
                   ),
@@ -78,6 +79,60 @@ class _ViewProductScreenState extends State<ViewProductScreen> {
                         ),
                       ],
                     ),
+                ],
+              ),
+              const SizedBox(height: 30,),
+              Text(
+                "This modern sofa chair features a sleek design and is perfect for those looking for a cozy, comfortable and stylish solution to their living space. The chair is crafted from a high-quality leather and has a clean finish.",
+                style: TextStyle(
+                  fontSize: 11,
+                  color: AppColor.greyColor
+                  ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Price: ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: AppColor.primaryColor,
+                        ),
+                      ),
+                      Text(
+                        "\$120.00",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: AppColor.primaryColor,
+                        ),
+                      ),
+                    ],
+                  ), 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.add_outlined,
+                        size: 15,
+                        color: AppColor.secondaryColor,
+                      ), 
+                      Text("5", style: TextStyle(
+                        color: AppColor.secondaryColor,
+                        fontSize: 12,
+                      ),),
+                      Icon(
+                        Icons.remove_circle_outline,
+                        size: 15,
+                        color: AppColor.secondaryColor,
+                      ),
+                    ],
+                  )
                 ],
               )
             ],
