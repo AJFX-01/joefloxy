@@ -4,6 +4,7 @@ import 'package:joefloxy/screens/home/components/categories.dart';
 import 'package:joefloxy/screens/home/components/tab.dart';
 import 'package:joefloxy/utils/widget_utils.dart';
 import '../../utils/constant_utils.dart';
+import '../../utils/product/product_card.dart';
 import 'components/appbar.dart';
 
 class HomePage extends StatefulWidget {

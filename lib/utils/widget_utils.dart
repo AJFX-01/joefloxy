@@ -18,8 +18,7 @@ Widget indicator(Color? color, double width) {
   );
 }
 
-PreferredSizeWidget appBar(String title, BuildContext context,
-    {bool isProfile = false}) {
+PreferredSizeWidget appBar(String title, BuildContext context, {bool isProfile = false}) {
   void editProfile() {
     Routes.navigate(context, routeName: Routes.editprofilePage);
   }
@@ -177,8 +176,7 @@ class AppButton extends StatelessWidget {
   }
 }
 
-Widget titleHeader(
-    String title, String? route, BuildContext context, bool showButton) {
+Widget titleHeader(String title, String? route, BuildContext context, bool showButton) {
   return SizedBox(
       height: 40,
       width: double.infinity,

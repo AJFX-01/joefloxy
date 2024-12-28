@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:io';
 import '../constant_utils.dart';
 import 'view_product.dart';
 
@@ -25,6 +25,8 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   bool isFavorite = false;
+  double imageHeight = PlatformType.isAndriod ? 150 : 100;
+  double imageWidth = PlatformType.isIOS ? 120 : 150;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

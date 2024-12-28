@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:joefloxy/models/bottom_menu_model.dart';
 
@@ -77,3 +79,8 @@ List<BottomMenuModel> bottomMenu = [
     route: Routes.profilePage,
   )
 ];
+
+class PlatformType {
+  static bool isAndriod = Platform.isAndroid;
+  static bool isIOS = Platform.isIOS;
+}
