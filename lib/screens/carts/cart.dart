@@ -24,32 +24,57 @@ class _CartPageState extends State<CartPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CartItem(imageUrl: "assets/images/product/chair4.png", productname: "Modern Sofa Chair", price: 120),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10,),
               CartItem(imageUrl: "assets/images/product/chair3.png", productname: "D4 Lounge Chair", price: 209),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10,),
               CartItem(imageUrl: "assets/images/product/chair4.png", productname: "Modern Sofa Chair", price: 120),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10,),
               CartItem(imageUrl: "assets/images/product/chair3.png", productname: "D4 Lounge Chair", price: 209),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10,),
               CartItem(imageUrl: "assets/images/product/chair4.png", productname: "Modern Sofa Chair", price: 120),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10,),
               CartItem(imageUrl: "assets/images/product/chair3.png", productname: "D4 Lounge Chair", price: 209)
             ],
           ),
         ),
       ),
       bottomSheet: Container(
+        height: 130,
         color: AppColor.whiteColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16),
-          child: AppButton(
-            text: "Proceed to Checkout",
-            onPressed: () {},
-            buttonHeight: 50,
-            fontSize: 14,
-            textColor: AppColor.whiteColor,
-            buttonColor: AppColor.secondaryColor,
-            borderRadius: BorderRadius.circular(15),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Selected items (02)",
+                    style: TextStyle(
+                      color: AppColor.secondaryColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 12
+                    ),
+                  ),
+                  Text("Total: \$730",
+                    style: TextStyle(
+                      color: AppColor.secondaryColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 12
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 15,),
+              AppButton(
+                text: "Proceed to Checkout",
+                onPressed: () {},
+                buttonHeight: 50,
+                fontSize: 14,
+                textColor: AppColor.whiteColor,
+                buttonColor: AppColor.secondaryColor,
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ],
           ),
         ),
       ),
