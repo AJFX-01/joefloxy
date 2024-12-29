@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joefloxy/screens/auth/login.dart';
+import 'package:joefloxy/screens/carts/cart.dart';
 import 'package:joefloxy/screens/onboarding.dart';
 import 'package:joefloxy/screens/splashscrren.dart';
 
@@ -42,6 +43,7 @@ class Routes {
 
     homePage: (context) => const HomePage(),
     profilePage: (context) => const ProfilePage(),
+    cartPage: (context) => const CartPage(),
 
     editprofilePage: (context) => const EditProfilePage(),
   };

@@ -36,7 +36,9 @@ class _ProductCardState extends State<ProductCard> {
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const ViewProductScreen(),
+          builder: (context) => ViewProductScreen(
+            productname: widget.title,
+          ),
         ),
       ),
       child: Stack(
