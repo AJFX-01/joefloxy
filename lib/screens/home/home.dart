@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double mainAxisSpacing = PlatformType.isIOS ? 8 : 8;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,19 +34,23 @@ class _HomePageState extends State<HomePage> {
               // ProductCard(imageUrl: "assets/images/product/chair4.png", title: "Modern Sofa", manufacturer: "LORNEXO", price: 299.99, rating: 4.5),
               // const SizedBox(height: 10,),
               titleHeader("Categories", "", context, false),
-              const SizedBox(height: 5,),
+              const SizedBox(
+                height: 5,
+              ),
               const CategorySection(),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               titleHeader("Most Popular", "popular", context, true),
               const TabSection(),
               SizedBox(
                 height: 1000,
                 child: GridView(
-                  padding: const EdgeInsets.only(top: 5, right: 10, left: 10),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  padding: const EdgeInsets.only(right: 10, left: 10),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 4,
-                    mainAxisSpacing: 4,
+                    mainAxisSpacing: mainAxisSpacing,
                     childAspectRatio: 0.6,
                   ),
                   scrollDirection: Axis.vertical,
@@ -93,7 +98,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: const BottomMenu(active: 0,),
+      floatingActionButton: const BottomMenu(
+        active: 0,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

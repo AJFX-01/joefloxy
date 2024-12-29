@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 import '../constant_utils.dart';
 import 'view_product.dart';
 
@@ -25,8 +24,13 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   bool isFavorite = false;
-  double imageHeight = PlatformType.isAndriod ? 150 : 100;
-  double imageWidth = PlatformType.isIOS ? 120 : 150;
+
+  double imageHeight = PlatformType.isAndriod ? 100 : 120;
+  double imageWidth = PlatformType.isIOS ? 120 : 100;
+
+  double favoriteIconWidth = PlatformType.isIOS ? 95 : 80;
+
+  double bottom = PlatformType.isIOS ? 60 : 20;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -131,10 +135,8 @@ class _ProductCardState extends State<ProductCard> {
             ),
           ),
           Positioned(
-            bottom: 65,
+            bottom: bottom,
             left: 15,
-            // bottom: MediaQuery.of(context).size.height * 0.1,
-            // left: MediaQuery.of(context).size.width * 0.05,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               margin: const EdgeInsets.symmetric(vertical: 100, horizontal: 8),
@@ -149,8 +151,8 @@ class _ProductCardState extends State<ProductCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const SizedBox(
-                        width: 80,
+                      SizedBox(
+                        width: favoriteIconWidth,
                       ),
                       GestureDetector(
                         onTap: () => toggleFavorite(),
@@ -171,8 +173,8 @@ class _ProductCardState extends State<ProductCard> {
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       widget.imageUrl,
-                      height: 120,
-                      width: 120,
+                      height: imageHeight,
+                      width: imageWidth,
                       fit: BoxFit.contain,
                     ),
                   ),
